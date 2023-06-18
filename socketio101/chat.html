@@ -6,4 +6,22 @@
     console.log(socket.id)
   })
 
+  socket.on('messageFromServer',(dataFromSrver)=>{
+    console.log(dataFromSrver)
+    socket.emit('dataToServer',{
+        data:'Data from the client'
+    })
+  })
+
+
+//   socket.on('ping',()=>{
+//     console.log("ping was reseived from server");
+//     console.log(io.protocol)
+//   })
+
+//   socket.on('pong',(latency)=>{
+//     console.log(latency)
+//     console.log("pong was sent to server");
+//   })
+
 </script>

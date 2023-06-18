@@ -10,7 +10,10 @@ const io = io(server);
 
 
 io.on("connection", (socket) => {
-    socket.emit("sending from websocket");
+    socket.emit("messageFromServer",{data:"elcome to socktio server"});
+    socket.on("messageToServer",(dataFromClient)=>{
+      console.log(dataFromClient)
+    })
     socket.on("message", (message) => console.log(message));
   });
 
